@@ -5,16 +5,9 @@ class Solution(object):
         :type indices: List[int]
         :rtype: str
         """
-        
-        dic = {}
-        j = 0
-        for i in s:
-            dic[indices[j]] = i
-            j += 1
-        
-        sorted_dic = sorted(dic.items(), key=lambda x:x[0])
-        res = ''
-        for i in sorted_dic:
-            res += i[1]
-        return res
+        arr = ['0']*len(s)
+        for (ch, ind) in zip(s, indices):
+            arr[ind] = ch
+    
+        return ''.join(arr)
             
